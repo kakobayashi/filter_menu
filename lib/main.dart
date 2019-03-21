@@ -179,7 +179,10 @@ class _MainPageState extends State<MainPage> {
         key: _listKey,
         itemBuilder: (context, index, animation) {
           return TaskRow(
+            /// itemBuilderからAnimation取得できる
+            /// これをFadeTransitionとSizeTransitionのAnimationに設定させることでアニメーション適用できる
             task: listModel[index],
+            animation: animation,
           );
         },
       )

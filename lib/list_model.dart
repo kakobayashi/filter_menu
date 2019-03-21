@@ -1,5 +1,6 @@
 
 import 'package:filter_menu/task.dart';
+import 'package:filter_menu/task_row.dart';
 import 'package:flutter/material.dart';
 
 class ListModel {
@@ -18,7 +19,11 @@ class ListModel {
   Task remoteAt(int index) {
     final Task removedItem = items.removeAt(index);
     if (removedItem != null) {
-      _animatedList.removeItem(index, (context, animation) => Container());
+      _animatedList.removeItem(
+          index, (context, animation) => TaskRow(
+        task: removedItem,
+        animation: animation,
+      ));
     }
     return removedItem;
   }
