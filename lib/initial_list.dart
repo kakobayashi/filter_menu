@@ -37,4 +37,18 @@ List<Task> tasks = [
       color: Colors.cyan,
       completed: true
   ),
+  Task(
+      name: "Design explorations",
+      category: "Company Website",
+      time: "12pm",
+      color: Colors.pink,
+      completed: false
+  ),
+  Task(
+    name: "Catch up with Brian",
+    category: "Mobile Project",
+    time: "14pm",
+    color: Colors.orange,
+    completed: false,
+  ),
 ];

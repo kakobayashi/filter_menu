@@ -13,7 +13,9 @@ class ListModel {
 
   void insert(int index, Task item) {
     items.insert(index, item);
-    _animatedList.insertItem(index);
+    _animatedList.insertItem(index, duration: Duration(
+      milliseconds: 150
+    ));
   }
 
   Task remoteAt(int index) {
@@ -23,7 +25,9 @@ class ListModel {
           index, (context, animation) => TaskRow(
         task: removedItem,
         animation: animation,
-      ));
+      ),
+      duration: Duration(milliseconds: (150 + 150*(index/length)).toInt())
+      );
     }
     return removedItem;
   }

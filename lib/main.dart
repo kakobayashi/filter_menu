@@ -1,3 +1,4 @@
+import 'package:filter_menu/animated_fab.dart';
 import 'package:filter_menu/dialogonal_clipper.dart';
 import 'package:filter_menu/initial_list.dart';
 import 'package:filter_menu/list_model.dart';
@@ -59,12 +60,11 @@ class _MainPageState extends State<MainPage> {
 
   Widget _buildFab() {
     return Positioned(
-      top: _imageHeight - 36.0,
-      right: 16.0,
-      child: FloatingActionButton(onPressed: _changeFilterState,
-      backgroundColor: Colors.pink,
-      child: Icon(Icons.filter_list),
-      ),
+      top: _imageHeight - 100.0,
+      right: -20.0,
+      child: AnimatedFab(
+        onClick: _changeFilterState,
+      )
     );
   }
 
